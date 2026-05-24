@@ -11,3 +11,8 @@ def test_public_holiday_with_disconnect_canceled():
 
 def test_public_holiday_with_late_login_canceled():
     assert check_exam_status(60, False, 0, 35, True) == "Canceled"
+
+def test_auto_submitted():
+    from src.exam_system import check_exam_status
+    # Skenario: disconnect 6 menit (lebih dari 5) harusnya "Auto-Submitted"
+    assert check_exam_status(60, False, 6, 15, False) == "Auto-Submitted"
