@@ -11,3 +11,9 @@ def test_public_holiday_with_disconnect_canceled():
 
 def test_public_holiday_with_late_login_canceled():
     assert check_exam_status(60, False, 0, 35, True) == "Canceled"
+
+
+
+def test_tc_03_login_rejected():
+    hasil = check_exam_status(45, False, 2, 31, False)
+    assert hasil == "Rejected"

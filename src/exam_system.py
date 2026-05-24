@@ -2,3 +2,8 @@ def check_exam_status(exam_duration, accommodation_status, disconnect_duration, 
     if is_public_holiday:
         return "Canceled"
     return "Active"
+
+if login_time > 30:
+        return "Rejected"
+    
+    return "Active"
