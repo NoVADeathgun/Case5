@@ -17,3 +17,11 @@ def test_public_holiday_with_late_login_canceled():
 def test_tc_03_login_rejected():
     hasil = check_exam_status(45, False, 2, 31, False)
     assert hasil == "Rejected"
+
+def test_tc_02_login_active():
+    hasil = check_exam_status(45, False, 2, 30, False)
+    assert hasil == "Active"
+
+def test_tc_11_happy_path():
+    hasil = check_exam_status(60, False, 0, 10, False)
+    assert hasil == "Active"
